@@ -38,9 +38,9 @@ jobs:
                sudo npm install --prefix /home/ubuntu/appdemo1 \
 
       - name: Reiniciando o PM2
-       # run: |
-         #      ssh -i /tmp/private_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@${{ secrets.HOST }} \
-          #     pm2 restart app --update-env               
+        run: |
+               ssh -i /tmp/private_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@${{ secrets.HOST }} \
+               pm2 restart app --update-env               
 
       - name: Limpa o arquivo de chave privada após uso
         run: |
